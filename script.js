@@ -1,4 +1,12 @@
-/*Verifica se o email é válido para habiliatar o recuperar senha*/
+/*Inicializa executando o comando. Se o usuário estiver logado, continuar na página de home */
+window.onload = function() {
+    firebase.auth().onAuthStateChanged(user => {
+      if (user) {
+        window.location.href = "home.html";
+      }
+    })};
+
+/*Verifica se o email é válido para habilitar o recuperar senha*/
 function onChangeEmail(){
     toggleButtonDisable();
     toggleEmailErrors();
