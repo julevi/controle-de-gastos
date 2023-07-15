@@ -17,6 +17,7 @@ function onChangePassword(){
     togglePasswordErrors();
 }
 
+/*A função irá fazer o login do usuário, isso se no firebase existir esse usuário, se não executará uma mensagem de erro */
 function login() {
     showLoading();
     const email = document.getElementById("email").value;
@@ -33,6 +34,7 @@ function login() {
         });
 }
 
+/*O que acontece com a mensagem de erro anterior: Se não encontrar o usuário, dirá ou se a senha não for igual dirá também */
 function getErrorMessage(error){
         if (error.code =="auth/user-not-found") {
             return "Usuário não encontrado";
@@ -43,10 +45,12 @@ function getErrorMessage(error){
         return error.message;
 }
 
+/*Se chamar o registro vai para tela de registro */
 function register(){
     window.location.href = "register.html"
 }
 
+/*Se o usuário esqueceu a senha receberá uma mensagem no email para recuperar*/
 function recoverPassword(){
     showLoading();
     
@@ -59,6 +63,7 @@ function recoverPassword(){
     });
 }
 
+/*Função que valida o email, lógica escrita no validation.js */
 function isEmailValid(){
     const email = document.getElementById("email").value;
     if (!email) {
@@ -67,6 +72,7 @@ function isEmailValid(){
     return validateEmail(email);
 }
 
+/*Função que valida o senha*/
 function isPasswordValid(){
     const password = document.getElementById('password').value;
     if (!password){
@@ -75,6 +81,7 @@ function isPasswordValid(){
     return true;
 }
 
+/*Vai definir se o botão vai aparecer caso exista um erro ou não no email*/
 function toggleEmailErrors(){
     const email = document.getElementById('email').value;
     if(!email){
@@ -90,6 +97,7 @@ function toggleEmailErrors(){
     }
 }
 
+/*Vai definir se o botão vai aparecer caso exista um erro ou não na senha*/
 function togglePasswordErrors(){
     const password = document.getElementById('password').value;
     if(!password){
@@ -99,6 +107,7 @@ function togglePasswordErrors(){
     }
 }
 
+/*Vai definir se o botão vai aparecer caso exista um erro ou não na senha ou email*/
 function toggleButtonDisable(){
     const emailValid = isEmailValid();
     document.getElementById("recover-password-button").disabled = !emailValid;

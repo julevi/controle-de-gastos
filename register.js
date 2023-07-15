@@ -1,5 +1,5 @@
 
-/*Inicializa executando o comando. Se o usuário estiver logado, continuar na página de */
+/*Inicializa executando o comando. Se o usuário estiver logado, continuar na página de home */
 window.onload = function() {
     firebase.auth().onAuthStateChanged(user => {
       if (user) {
