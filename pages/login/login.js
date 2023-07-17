@@ -2,7 +2,7 @@
 window.onload = function() {
     firebase.auth().onAuthStateChanged(user => {
       if (user) {
-        window.location.href = "home.html";
+        window.location.href = "../home/home.html";
       }
     })};
 
@@ -26,7 +26,7 @@ function login() {
     firebase.auth().signInWithEmailAndPassword(email, password)
         .then(response => {
             hideLoading();
-            window.location.href = "home.html";
+            window.location.href = "../home/home.html";
         })
         .catch(error => {
             hideLoading();
@@ -47,7 +47,7 @@ function getErrorMessage(error){
 
 /*Se chamar o registro vai para tela de registro */
 function register(){
-    window.location.href = "register.html"
+    window.location.href = "../register/register.html"
 }
 
 /*Se o usuário esqueceu a senha receberá uma mensagem no email para recuperar*/

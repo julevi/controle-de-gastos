@@ -3,7 +3,7 @@
 window.onload = function() {
     firebase.auth().onAuthStateChanged(user => {
       if (user) {
-        window.location.href = "home.html";
+        window.location.href = "../home/home.html";
       }
 })};
 
@@ -36,7 +36,7 @@ function register(){
 
     firebase.auth().createUserWithEmailAndPassword(email, password).then(() => {
         hideLoading();
-        window.location.href = "home.html";
+        window.location.href = "../home/home.html";
     }).catch(error =>{
         hideLoading();
         alert(getErrorMessage(error));
@@ -95,5 +95,5 @@ const form = {
 
 function login(){
     showLoading();
-    window.location.href = "index.html"
+    window.location.href = "../login/login.html"
 }
