@@ -82,38 +82,6 @@ function formatDate(date){
     return new Date(date).toLocaleDateString('pt-br')
 }
 
-const fakeTransactions = [{
-    type: 'expense',
-    date: '2022-01-04',
-    money:{
-        currency: 'R$',
-        value: 10
-    },
-    transactionType:'Supermercado',
-}, {
-    type: 'income',
-    date: '2022-01-04',
-    money:{
-        currency: 'R$',
-        value: 5000
-    },
-    transactionType:'Salário',
-    description: 'Empresa A'
-}, {
-    type: 'expense',
-    date: '2022-01-04',
-    money:{
-        currency: 'R$',
-        value: 10
-    },
-    transactionType:'Supermercado',
-}, {
-    type: 'income',
-    date: '2022-01-04',
-    money:{
-        currency: 'R$',
-        value: 5000
-    },
-    transactionType:'Salário',
-    description: 'Empresa A'
-}]
+function newTransaction(){
+    window.location.href = "../transaction/transaction.html";
+}
