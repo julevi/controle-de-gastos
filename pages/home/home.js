@@ -7,13 +7,42 @@ function logout() {
     });
 }
 
-findTransactions();
+/*Buscar usuário para obter a base de dados dele*/
 
-function findTransactions(){
-    setTimeout(() => {
-        addTransactionsToScreen(fakeTransactions);
-    }, 1000)
+firebase.auth().onAuthStateChanged(user => {
+    if (user){
+        findTransactions(user);
+    }
+})
+
+
+/*Buscar usuário para obter a base de dados dele*/
+function findTransactions(user) {
+    showLoading();
+    firebase.firestore()
+        .collection('transactions')
+        // Faz uma consulta para buscar as transações onde o campo 'user.uid' seja igual ao UID do usuário autenticado
+        .where('user.uid', '==', user.uid)
+        // Realiza a consulta no Firestore
+        .orderBy('date', 'desc')
+        //Colocar os dados em ordem decrescente
+        .get()
+        .then(snapshot => {
+            hideLoading();
+            // O método then é chamado quando a consulta é concluída e retorna um snapshot com os resultados
+            // O snapshot.docs contém os documentos que correspondem à consulta
+            const transactions = snapshot.docs.map(doc => doc.data());
+            // Mapeia os dados dos documentos para obter um array de objetos de transações
+            addTransactionsToScreen(transactions);
+            // Chama a função addTransactionsToScreen, passando o array de transações como argumento
+        })
+        .catch(error => {
+            hideLoading();
+            console.error(error);
+            alert('"Erro ao buscar transações:"')
+        });
 }
+
 
 function addTransactionsToScreen(transactions){
     const orderedList = document.getElementById('transactions')
