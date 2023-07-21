@@ -10,7 +10,7 @@ function logout() {
 /*Buscar usuário para obter a base de dados dele*/
 
 firebase.auth().onAuthStateChanged(user => {
-    if (user){
+    if (user) {
         findTransactions(user);
     }
 })
@@ -31,7 +31,10 @@ function findTransactions(user) {
             hideLoading();
             // O método then é chamado quando a consulta é concluída e retorna um snapshot com os resultados
             // O snapshot.docs contém os documentos que correspondem à consulta
-            const transactions = snapshot.docs.map(doc => doc.data());
+            const transactions = snapshot.docs.map(doc => ({
+                ...doc.data(),
+                uid: doc.id
+            }));
             // Mapeia os dados dos documentos para obter um array de objetos de transações
             addTransactionsToScreen(transactions);
             // Chama a função addTransactionsToScreen, passando o array de transações como argumento
@@ -44,12 +47,15 @@ function findTransactions(user) {
 }
 
 
-function addTransactionsToScreen(transactions){
+function addTransactionsToScreen(transactions) {
     const orderedList = document.getElementById('transactions')
 
     transactions.forEach(transaction => {
         const li = document.createElement('li');
         li.classList.add(transaction.type);
+        li.addEventListener('click', () => {
+            window.location.href = '../transaction/transaction.html?uid=' + transaction.uid;
+        })
 
         const date = document.createElement('p')
         date.innerHTML = formatDate(transaction.date);
@@ -63,7 +69,7 @@ function addTransactionsToScreen(transactions){
         type.innerHTML = transaction.transactionType;
         li.appendChild(type);
 
-        if (transaction.description){
+        if (transaction.description) {
             const description = document.createElement('p')
             description.innerHTML = transaction.description;
             li.appendChild(description);
@@ -74,14 +80,14 @@ function addTransactionsToScreen(transactions){
 
 }
 
-function formatMoney(money){
+function formatMoney(money) {
     return `${money.currency} ${money.value.toFixed(2)}`
 }
 
-function formatDate(date){
+function formatDate(date) {
     return new Date(date).toLocaleDateString('pt-br')
 }
 
-function newTransaction(){
+function newTransaction() {
     window.location.href = "../transaction/transaction.html";
 }
