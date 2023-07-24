@@ -53,9 +53,20 @@ function addTransactionsToScreen(transactions) {
     transactions.forEach(transaction => {
         const li = document.createElement('li');
         li.classList.add(transaction.type);
+        li.id = transaction.uid
         li.addEventListener('click', () => {
             window.location.href = '../transaction/transaction.html?uid=' + transaction.uid;
         })
+
+
+        const deleteButton = document.createElement('button')
+        deleteButton.innerHTML = "Remover"
+        deleteButton.classList.add('outline', 'danger')
+        deleteButton.addEventListener('click', event => {
+            event.stopPropagation();
+            askRemoveTransaction(transaction);
+        })
+        li.appendChild(deleteButton);
 
         const date = document.createElement('p')
         date.innerHTML = formatDate(transaction.date);
@@ -79,6 +90,31 @@ function addTransactionsToScreen(transactions) {
     });
 
 }
+
+function askRemoveTransaction(transaction) {
+    const shouldRemove = confirm('Deseja remover a transação?')
+    if (shouldRemove) {
+        removeTransaction(transaction);
+    }
+}
+
+function removeTransaction(transaction) {
+    showLoading()
+    firebase.firestore()
+        .collection("transactions")
+        .doc(transaction.uid)
+        .delete()
+        .then(() => {
+            hideLoading()
+            document.getElementById(transaction.uid).remove();
+        })
+        .catch(error => {
+            hideLoading()
+            console.log(error)
+            alert('Erro ao atualizar transação');
+        });
+}
+
 
 function formatMoney(money) {
     return `${money.currency} ${money.value.toFixed(2)}`

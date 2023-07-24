@@ -1,3 +1,28 @@
-h1{
-    text-align: center;
-}
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(51, 51, 51, 0.1);
+    color: #fff;
+    padding: 10px;
+  }
+  
+  .header-left h1 {
+    margin: 0;
+  }
+  
+  .header-right button {
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .header-right button:hover {
+    background-color: rgba(51, 51, 51, 0.1);
+    color: white;
+  }
+  

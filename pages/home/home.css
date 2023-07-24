@@ -25,3 +25,9 @@ ol li.income{
 p{
     margin: 4px 0;
 }
+
+button.danger{
+    width:auto;
+    float:right;
+    cursor: pointer;
+}

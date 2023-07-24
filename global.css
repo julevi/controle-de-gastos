@@ -9,10 +9,6 @@ h1{
     color: white;
 }
 
-header{
-    text-align:right;
-}
-
 header button{
     width: auto;
 }
@@ -69,6 +65,12 @@ input[type="radio"]{
     background-color: transparent;
     border: 1px solid white;
     color: White;
+}
+
+.outline.danger{
+    color:red;
+    border-color: red;
+    
 }
 
 button:active{
