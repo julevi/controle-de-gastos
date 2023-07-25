@@ -1,5 +1,4 @@
 body{
-    background-color: rgb(30, 206, 147);
     height: 100vh;
     margin: 0;
 }
@@ -9,9 +8,6 @@ h1{
     color: white;
 }
 
-header button{
-    width: auto;
-}
 
 
 .centralize{
@@ -52,25 +48,32 @@ input[type="radio"]{
 .clear{
     background-color: transparent;
     border: none;
-    color:white
+    color:white;
+    font-weight: bold;
+    cursor: pointer;
 }
 
 .solid{
     background-color: white;
     border: none;
     color: rgb(30, 206, 147);
+    font-weight: bold;
+    cursor: pointer;
 }
 
 .outline{
     background-color: transparent;
     border: 1px solid white;
     color: White;
+    font-weight: bold;
+    cursor: pointer;
 }
 
 .outline.danger{
     color:red;
     border-color: red;
-    
+    font-weight: bold;
+    cursor: pointer;
 }
 
 button:active{

@@ -1,28 +1,92 @@
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-  }
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(30, 206, 147);
+  padding: 10px 40px;
+  color: white;
+}
+#entrar{
+  width: auto;
+}
+
+.logo{
+  width: 200px;
+}
+
+ul {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
   
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: rgba(51, 51, 51, 0.1);
-    color: #fff;
-    padding: 10px;
+}
+
+.list-prim {
+  font-size: 15px;
+  margin-left: 30px;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+.menu-celular{
+  display: none;
+}
+
+/*Início do estilo do submenu*/
+.sub-list{
+  display: inline-block;
+  text-align: center;
+  padding-bottom: 20px;
+
+}
+
+.list-sub{
+  padding: 10px;
+  border-bottom: 1px solid #00000013;
+}
+
+.sub-botoes{
+  display: inline-block;
+}
+
+.conteudo-sub-completo{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-between;
+
+}
+
+/*Fim do estilo do submenu*/
+
+@media screen and (max-width:768px){
+  .menu-celular{
+    display: block;
   }
-  
-  .header-left h1 {
-    margin: 0;
+  .sub-menu{
+    display: none;
   }
-  
-  .header-right button {
-    padding: 10px 20px;
-    cursor: pointer;
+  .barra{
+    width: 25px;
   }
-  
-  .header-right button:hover {
-    background-color: rgba(51, 51, 51, 0.1);
-    color: white;
+  .list{
+    display: none;
   }
+  .botoes{
+    display: none;
+  }
+
+
   
+}

@@ -21,14 +21,44 @@
 
 <body>
     <header class="header">
-        <div class="header-left">
-            <h1>Controle Financeiro Pessoal</h1>
+        <img class="logo" src="img/logo2.png" alt="logo money master">
+        <ul class="list">
+            <li class="list-prim"><a href="#">Home</a></li>
+            <li class="list-prim"><a href="#">Sobre</a></li>
+            <li class="list-prim"><a href="#">Funcionalidades</a></li>
+            <li class="list-prim"><a href="#">Contato</a></li>
+        </ul>
+        <div class="botoes">
+            <button type="button" class="clear" onclick="login()" id="entrar">Entrar</button>
+            <button type="button" class="outline" onclick="criar()" id="entrar">Criar Conta</button>
         </div>
-        <div class="header-right">
-            <button type="button" class="solid" onclick="logout()" id="entrar">Login</button>
-        </div>
-    </header>
 
+        <div class="menu-celular">
+            <div class="barra-de-menu">
+                <img class="barra" onclick="subMenu()" src="img/botao-de-menu.png" alt="">
+            </div>
+
+            <div class="sub-menu">
+                <div class="conteudo-sub-completo">
+                    <img onclick="fecharMenu()" class="barra" src="img/x.png" alt="">
+                    <ul class="sub-list">
+                        <li class="list-sub"><a href="#">Home</a></li>
+                        <li class="list-sub"><a href="#">Sobre</a></li>
+                        <li class="list-sub"><a href="#">Funcionalidades</a></li>
+                        <li class="list-sub"><a href="#">Contato</a></li>
+                    </ul>
+                    <div class="sub-botoes">
+                        <button type="button" class="clear" onclick="login()" id="sub-entrar">Entrar</button>
+                        <button type="button" class="outline" onclick="criar()" id="sub-entrar">Criar Conta</button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </header>
 
 
 </body>

@@ -1,3 +1,7 @@
+body{
+    background-color:rgb(30, 206, 147);
+}
+
 ol{
     list-style-type:none;
     padding: 0;
