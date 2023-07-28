@@ -1,10 +1,10 @@
 body{
     height: 100vh;
     margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 h1{
-    font-family: Arial, Helvetica, sans-serif;
     color: white;
 }
 
@@ -90,7 +90,8 @@ button.fab{
     border-radius: 50px;
     border: none;
     font-size:24px;
-    box-shadow: 2px 2px 2px gray;
+    background-color: #1ece93;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .fab.fixed{
@@ -117,3 +118,7 @@ button.fab.right{
     display:none;
 }
 
+#mais{
+    color: white;
+    font-size: 30px;
+}

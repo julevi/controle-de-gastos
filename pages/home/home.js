@@ -60,7 +60,7 @@ function addTransactionsToScreen(transactions) {
 
 
         const deleteButton = document.createElement('button')
-        deleteButton.innerHTML = "Remover"
+        deleteButton.innerHTML = "Excluir"
         deleteButton.classList.add('outline', 'danger')
         deleteButton.addEventListener('click', event => {
             event.stopPropagation();
@@ -70,10 +70,12 @@ function addTransactionsToScreen(transactions) {
 
         const date = document.createElement('p')
         date.innerHTML = formatDate(transaction.date);
+        date.classList.add('data')
         li.appendChild(date);
 
-        const money = document.createElement('p')
+        const money = document.createElement('h1')
         money.innerHTML = formatMoney(transaction.money);
+        money.classList.add('money')
         li.appendChild(money);
 
         const type = document.createElement('p')

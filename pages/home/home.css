@@ -1,37 +1,113 @@
-body{
-    background-color:rgb(30, 206, 147);
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(30, 206, 147);
+    padding: 10px 40px;
+    color: white;
+
+}
+.textos {
+  margin: 0;
 }
 
-ol{
-    list-style-type:none;
+.total{
+    text-align: center;
+}
+
+.fantasma{
+   opacity: 0;
+
+}
+
+#sair {
+    width: auto;
+}
+
+.logo {
+    width: 200px;
+}
+
+.principal-saldo {
+    width: 100%;
+    background: linear-gradient(to top, white 50%, rgb(30, 206, 147) 50%);
+}
+
+.fundo-saldo {
+    background-color: white;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-radius: 10px;
+    width: 40%;
+    height: 7rem;
+}
+
+.olho{
+    width: 2rem;
+    margin: 30px;
+}
+
+h1.money {
+    color: black;
+}
+
+ol {
+    list-style-type: none;
     padding: 0;
 }
 
-ol li{
-    cursor:pointer;
+ol li {
+    cursor: pointer;
     background: white;
     padding: 8px 16px;
-    border-bottom: 1px solid gray;
+    border-radius: 10px;
+    margin: 2rem 6rem;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
-ol li:hover{
+ol li:hover {
     opacity: 0.8;
 }
 
-ol li.expense{
-    border-left: 10px solid red;
+ol li.expense {
+
+    border-left: 10px solid #d04c3b;
 }
 
-ol li.income{
+ol li.income {
     border-left: 10px solid green;
 }
 
-p{
-    margin: 4px 0;
+button.danger {
+    width: auto;
+    float: right;
+    cursor: pointer;
 }
 
-button.danger{
-    width:auto;
-    float:right;
-    cursor: pointer;
+@media screen and (max-width:900px) {
+
+    .fundo-saldo {
+        width: 70%;
+        height: 5rem;
+    }
+
+    h1{
+        font-size: 1.5rem;
+    }
+
+    h1{
+        font-size: 1.5rem;
+    }
+
+    .olho{
+        width: 1.7rem;
+        margin: 10px;
+    }
+    .logo {
+        width: 150px;
+    }
+
+    ol li{
+        margin: 1rem 3rem;
+    }
 }

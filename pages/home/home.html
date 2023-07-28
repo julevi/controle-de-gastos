@@ -21,14 +21,32 @@
 
 <body>
     <header>
-        <button type="button" class="clear" onclick="logout()">Sair</button>
+        <img class="logo" src="../../img/logo2.png" alt="logo money master">
+        <button type="button" class="outline" id="sair" onclick="logout()">Sair</button>
     </header>
+    <div class="principal-saldo centralize">
+        <div class="fundo-saldo centralize">
+            <img class="olho" src="../../img/view.png" alt="">
+            <div class="total">
+                <div>
+                    
+                </div>
+                <p class="textos">Saldo Total:</p>
+                <h1 class="money textos">R$ 100,00</h1>
+                
+            </div>
+            <div>
+                <img class="olho fantasma" src="../../img/view.png" draggable="false" alt="">
+            </div>
+
+        </div>
+    </div>
 
     <ol id="transactions">
 
     </ol>
 
-    <button class="fab fixed botton right" onclick="newTransaction()">+</button>
+    <button class="fab fixed botton right" id="mais" onclick="newTransaction()">+</button>
 
 </body>
 
