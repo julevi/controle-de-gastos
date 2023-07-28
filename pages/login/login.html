@@ -20,28 +20,41 @@
 </head>
 
 <body class="centralize">
-    <form>
-        <h1>Login</h1>
-        <div class="form-field">
-            <input type="email" name="email" placeholder="Email:" id="email" onchange="onChangeEmail()" />
-            <div class="error" id="email-required-error">Email é obrigatório</div>
-            <div class="error" id="email-invalid-error">Email é inválido</div>
+
+    <div class="conteudo-completo">
+        <div class="img-login">
+            <img class="img-cofre" src="../../img/person-login.png" alt="mulher e um celular">
         </div>
-        <div class="form-field">
-            <input type="password" name="senha" id="password" placeholder="Senha:" onchange="onChangePassword()" />
-            <div class="error" id="password-required-error"> Senha é obrigatória</div>
-        </div>
-        <div>
-            <button class="clear" type="button" disabled="true" id="recover-password-button"
-                onclick="recoverPassword()">Recuperar Senha</button>
-        </div>
-        <div>
-            <button class="solid" type="button" id="login-button" disabled="true" onclick="login()">Entrar</button>
-        </div>
-        <div>
-            <button class="outline" type="button" onclick="register()">Registrar</button>
-        </div>
-    </form>
+
+        <form>
+            <div class="div-seta">
+                <img class="seta" onclick="abrirHome()" src="../../img/voltarbranco.png" alt="Botão de voltar">
+            </div>
+            <h1>Login</h1>
+            <div class="form-field">
+                <input type="email" name="email" placeholder="Email:" id="email" onchange="onChangeEmail()" />
+                <div class="error" id="email-required-error">Email é obrigatório</div>
+                <div class="error" id="email-invalid-error">Email é inválido</div>
+            </div>
+            <div class="form-field">
+                <input type="password" name="senha" id="password" placeholder="Senha:" onchange="onChangePassword()" />
+                <div class="error" id="password-required-error"> Senha é obrigatória</div>
+            </div>
+            <div>
+                <button class="clear" type="button" disabled="true" id="recover-password-button"
+                    onclick="recoverPassword()">Recuperar Senha</button>
+            </div>
+            <div>
+                <button class="solid" type="button" id="login-button" disabled="true" onclick="login()">Entrar</button>
+            </div>
+            <div>
+                <button class="outline" type="button" onclick="register()">Registrar</button>
+            </div>
+        </form>
+
+    </div>
+
+
 </body>
 
 </html>

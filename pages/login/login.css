@@ -1,14 +1,43 @@
-body{
-    background-color:rgb(30, 206, 147);
+
+body {
+    background-image: linear-gradient(to right top, #1ece93, #18be85, #11ad78, #089e6b, #008e5e);
 }
 
-form{
-    width:300px;
+form {
+    background-color: rgb(30, 206, 147);
+    width: 15rem;
+    padding: 2rem;
 }
 
-button{
-    cursor:pointer;
-    margin-bottom:10px;
+.conteudo-completo {
+    background-color: white;
+    display: flex;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    align-items: center;
 }
 
+button {
+    cursor: pointer;
+    margin-bottom: 10px;
+}
 
+.img-login{
+    flex-direction: column;
+}
+
+.img-cofre {
+    padding: 30px;
+    width: 15rem;
+}
+
+.seta {
+    width: 2rem;
+    cursor: pointer;
+}
+
+@media screen and (max-width:900px) {
+    .img-login{
+        display:none;
+    }
+  
+  }
