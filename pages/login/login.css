@@ -1,6 +1,7 @@
 
 body {
     background-image: linear-gradient(to right top, #1ece93, #18be85, #11ad78, #089e6b, #008e5e);
+    height: 100vh;
 }
 
 form {

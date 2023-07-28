@@ -7,6 +7,9 @@ window.onload = function() {
       }
 })};
 
+function abrirHome() {
+    window.location.href = "../../index.html";
+}
 
 function onChangeEmail(){
     const email = form.email().value;
