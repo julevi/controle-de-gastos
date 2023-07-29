@@ -148,12 +148,14 @@ function update(transaction) {
 }
 
 function createTransaction() {
+    const isExpense = form.typeExpense().checked;
+
     return {
-        type: form.typeExpense().checked ? "expense" : "income",
+        type: isExpense ? "expense" : "income",
         date: form.date().value,
         money: {
             currency: form.currency().value,
-            value: parseFloat(form.value().value),
+            value: isExpense ? -parseFloat(form.value().value) : parseFloat(form.value().value),
         },
         transactionType: form.transactionType().value,
         description: form.description().value,
@@ -164,9 +166,13 @@ function createTransaction() {
     };
 }
 
+function cancelar() {
+    window.location.href = "../home/home.html";
+}
 
 const form = {
     saveButton: () => document.getElementById('save-button'),
+
 
     date: () => document.getElementById('date'),
     dateRequiredError: () => document.getElementById('date-required-error'),

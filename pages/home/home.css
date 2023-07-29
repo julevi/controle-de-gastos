@@ -45,6 +45,7 @@ header {
 .olho{
     width: 2rem;
     margin: 30px;
+    cursor: pointer;
 }
 
 h1.money {

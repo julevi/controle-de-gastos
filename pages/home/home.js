@@ -1,4 +1,3 @@
-/*Chamei a fuhnção signOut de logout do firebase, desconectando o usuário ao clicar em sair */
 function logout() {
     firebase.auth().signOut().then(() => {
         window.location.href = "../login/login.html";
@@ -6,17 +5,15 @@ function logout() {
         alert('Erro ao fazer logout');
     });
 }
-
-/*Buscar usuário para obter a base de dados dele*/
+/*Chamei a função signout de logout do firebase, desconectando o usuário ao clicar em sair */
 
 firebase.auth().onAuthStateChanged(user => {
     if (user) {
         findTransactions(user);
     }
 })
+/*Se o usuário estiver autenticado (ou seja, se user for um objeto válido), a função findTransactions() é chamada para buscar as transações associadas ao usuário*/
 
-
-/*Buscar usuário para obter a base de dados dele*/
 function findTransactions(user) {
     showLoading();
     firebase.firestore()
@@ -38,14 +35,30 @@ function findTransactions(user) {
             // Mapeia os dados dos documentos para obter um array de objetos de transações
             addTransactionsToScreen(transactions);
             // Chama a função addTransactionsToScreen, passando o array de transações como argumento
+            calculateAndShowTotalMoney(transactions)
+
         })
         .catch(error => {
             hideLoading();
             console.error(error);
-            alert('"Erro ao buscar transações:"')
+            alert('Erro ao buscar transações:')
         });
 }
 
+function calculateAndShowTotalMoney(transactions) {
+    let totalMoney = 0;
+    transactions.forEach(transaction => {
+        totalMoney += transaction.money.value;
+    });
+    // Agora você tem o totalMoney que é a soma de todos os valores monetários das transações do usuário.
+    // Exiba o resultado onde desejar, por exemplo:
+    console.log("Total Money:", totalMoney);
+    // Ou, se você quiser exibir no HTML, crie um elemento e insira o valor dentro dele.
+    const totalMoneyElement = document.getElementById('totalMoney');
+    if (totalMoneyElement) {
+        totalMoneyElement.innerText = formatMoney({ currency: 'R$', value: totalMoney });
+    }
+}
 
 function addTransactionsToScreen(transactions) {
     const orderedList = document.getElementById('transactions')
