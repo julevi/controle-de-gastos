@@ -1,3 +1,30 @@
-body{
-    background-color:rgb(30, 206, 147);
+body {
+    background-color: rgb(30, 206, 147);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(30, 206, 147);
+    padding: 10px 40px;
+    color: white;
+
+}
+
+#sair {
+    width: auto;
+}
+
+.logo {
+    width: 200px;
+}
+
+
+form {
+    background-color: rgb(30, 206, 147);
+    width: 15rem;
+    padding: 2rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    align-items: center;
 }

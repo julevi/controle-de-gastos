@@ -70,8 +70,6 @@ function addTransactionsToScreen(transactions) {
         li.addEventListener('click', () => {
             window.location.href = '../transaction/transaction.html?uid=' + transaction.uid;
         })
-
-
         const deleteButton = document.createElement('button')
         deleteButton.innerHTML = "Excluir"
         deleteButton.classList.add('outline', 'danger')
