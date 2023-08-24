@@ -16,9 +16,7 @@ header {
     text-align: center;
 }
 
-.olho_fantasma {
-    width: 2rem;
-    margin: 30px;
+.fantasma {
     opacity: 0;
 }
 
@@ -113,4 +111,5 @@ button.danger {
     ol li {
         margin: 1rem 3rem;
     }
+
 }
