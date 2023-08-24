@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(30, 206, 147);
+    background-image: linear-gradient(to right top, #1ece93, #18be85, #11ad78, #089e6b, #008e5e);
 }
 
 header {
@@ -12,8 +12,18 @@ header {
 
 }
 
-#sair {
-    width: auto;
+h1{
+    font-size: 1.5rem;
+}
+
+.seta {
+    width: 2rem;
+    cursor: pointer;
+}
+
+.titulo_transacao{
+    color: white;
+    font-size: 1.2rem;
 }
 
 .logo {

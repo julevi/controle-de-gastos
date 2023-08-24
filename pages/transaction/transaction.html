@@ -20,15 +20,15 @@
     <script src="../../loading.js"></script>
 </head>
 
-<body>
-    <header>
-        <img class="logo" src="../../img/logo2.png" alt="logo money master">
-        <button type="button" class="outline" id="sair" onclick="logout()">Sair</button>
-    </header>
-    <main class="centralize">
+<body class="centralize">
+    <main>
         <form class="formulario">
+            <div>
+                <img class="seta" onclick="cancelar()" src="../../img/voltarbranco.png" alt="Botão de voltar"></button>
+                <h1>Nova Transação</h1>
+            </div>
+
             <div class="form-field">
-                <label>Transação: *</label>
                 <div>
                     <input type="radio" name="type" checked id="expense">
                     <label for="expense">Despesas</label>
@@ -37,12 +37,10 @@
                 </div>
             </div>
             <div class="form-field">
-                <label>Data da Transação: *</label>
                 <input type="date" onchange="onChangeDate()" id="date">
                 <div class="error" id="date-required-error">Data é obrigatório ou está inválido</div>
             </div>
             <div class="form-field">
-                <label>Moeda: *</label>
                 <select id="currency">
                     <option value="€">Dolar</option>
                     <option value="$">Euro</option>
@@ -50,13 +48,11 @@
                 </select>
             </div>
             <div class="form-field">
-                <label>Valor: *</label>
-                <input type="number" onchange="onChangeValue()" id="value">
+                <input type="number" onchange="onChangeValue()" id="value" placeholder="Digite o valor:">
                 <div class="error" id="value-required-error">Valor é obrigatório</div>
                 <div class="error" id="value-less-or-equal-to-zero-error">Valor deve ser maior que zero</div>
             </div>
             <div class="form-field">
-                <label>Tipo de Transação: *</label>
                 <select onchange="onChangeTransactionType()" id="transaction-type">
                     <option value="">-- Selecione o tipo de transação --</option>
                     <option>Acomodação</option>
@@ -69,7 +65,7 @@
                 <div class="error" id="transaction-type-required-error">Tipo de transação é obrigatória</div>
             </div>
             <div class="form-field">
-                <label>Descrição:</label>
+                <label>Descrição (Opcional):</label>
                 <input type="text" id="description">
             </div>
             <button type="button" class="solid" id="save-button" disabled onclick="saveTransaction()">Salvar</button>
