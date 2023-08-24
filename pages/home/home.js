@@ -112,21 +112,24 @@ function askRemoveTransaction(transaction) {
 }
 
 function removeTransaction(transaction) {
-    showLoading()
+    showLoading();
     firebase.firestore()
         .collection("transactions")
         .doc(transaction.uid)
         .delete()
         .then(() => {
-            hideLoading()
+            hideLoading();
             document.getElementById(transaction.uid).remove();
+            window.location.reload();
         })
         .catch(error => {
-            hideLoading()
-            console.log(error)
+            hideLoading();
+            console.log(error);
             alert('Erro ao atualizar transação');
         });
+
 }
+
 
 
 function formatMoney(money) {
@@ -140,3 +143,24 @@ function formatDate(date) {
 function newTransaction() {
     window.location.href = "../transaction/transaction.html";
 }
+
+let originalTotal = null;
+let isTotalHidden = false;
+
+function fecharOlho() {
+    const valorTotalElement = document.getElementById('totalMoney');
+    const olhoImgElement = document.getElementById('olhoImg');
+
+    if (valorTotalElement && olhoImgElement) {
+        if (originalTotal === null) {
+            originalTotal = valorTotalElement.innerText;
+            valorTotalElement.innerText = "---";
+            olhoImgElement.src = "../../img/close-eye.png";
+        } else {
+            valorTotalElement.innerText = originalTotal;
+            originalTotal = null;
+            olhoImgElement.src = "../../img/view.png";
+        }
+    }
+}
+

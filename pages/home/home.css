@@ -7,17 +7,19 @@ header {
     color: white;
 
 }
+
 .textos {
-  margin: 0;
+    margin: 0;
 }
 
-.total{
+.total {
     text-align: center;
 }
 
-.fantasma{
-   opacity: 0;
-
+.olho_fantasma {
+    width: 2rem;
+    margin: 30px;
+    opacity: 0;
 }
 
 #sair {
@@ -41,7 +43,7 @@ header {
     height: 7rem;
 }
 
-.olho{
+.olho {
     width: 2rem;
     margin: 30px;
     cursor: pointer;
@@ -91,23 +93,24 @@ button.danger {
         height: 5rem;
     }
 
-    h1{
+    h1 {
         font-size: 1.5rem;
     }
 
-    h1{
+    h1 {
         font-size: 1.5rem;
     }
 
-    .olho{
+    .olho {
         width: 1.7rem;
         margin: 10px;
     }
+
     .logo {
         width: 150px;
     }
 
-    ol li{
+    ol li {
         margin: 1rem 3rem;
     }
 }
