@@ -37,13 +37,18 @@ header {
     background-color: white;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     border-radius: 10px;
-    width: 40%;
+    width: auto;
     height: 7rem;
+    display:flex;
+    justify-content: left;
+    align-items: center;
+    padding-left: 30px;
+    padding-right: 30px
 }
 
 .olho {
+    margin-right: 10px;
     width: 2rem;
-    margin: 30px;
     cursor: pointer;
 }
 
@@ -86,10 +91,6 @@ button.danger {
 
 @media screen and (max-width:900px) {
 
-    .fundo-saldo {
-        width: 70%;
-        height: 5rem;
-    }
 
     h1 {
         font-size: 1.5rem;

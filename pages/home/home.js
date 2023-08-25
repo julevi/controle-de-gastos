@@ -130,11 +130,11 @@ function removeTransaction(transaction) {
 
 }
 
-
-
 function formatMoney(money) {
-    return `${money.currency} ${money.value.toFixed(2)}`
+    const formattedValue = money.value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    return formattedValue;
 }
+
 
 function formatDate(date) {
     return new Date(date).toLocaleDateString('pt-br')
